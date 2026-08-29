@@ -1,0 +1,29 @@
+{
+  "name": "bouncer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Contact-evasion & chat safety engine — cost-descending cascade",
+  "scripts": {
+    "test": "pnpm -r test",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "train:trigrams": "tsx scripts/train-trigrams.ts",
+    "build:corpus": "tsx scripts/build-corpus.ts",
+    "bench": "tsx scripts/run-benchmark.ts",
+    "train:classifier": "tsx scripts/train-classifier.ts",
+    "mine:rules": "tsx scripts/mine-rules.ts",
+    "smoke:groq": "tsx scripts/smoke-groq.ts",
+    "demo": "pnpm --filter @bouncer/playground dev",
+    "build:playground": "pnpm --filter @bouncer/playground build",
+    "redteam": "tsx scripts/red-team.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "packageManager": "pnpm@10.29.1",
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$comment": "UPI PSP handles for SPEC §4 `upi` detector. India-specific: a VPA is often literally the phone number, so it doubles as contact AND off-platform payment.",
+  "psp_handles": [
+    "ybl", "ibl", "axl", "apl", "abfspay",
+    "okhdfcbank", "okicici", "oksbi", "okaxis", "okbizaxis",
+    "paytm", "ptaxis", "ptsbi", "ptyes", "pthdfc",
+    "upi", "hdfcbank", "icici", "sbi", "axisbank", "kotak", "yesbank",
+    "indus", "idfcbank", "idfcfirst", "federal", "fbl", "rbl", "unionbank",
+    "uboi", "barodampay", "bandhan", "cnrb", "cboi", "dbs", "dlb", "jkb",
+    "kbl", "kvb", "lvb", "pnb", "psb", "purz", "sib", "tjsb", "utbi", "yapl",
+    "airtel", "freecharge", "jupiteraxis", "naviaxis", "slc", "timecosmos",
+    "waaxis", "wahdfcbank", "waicici", "wasbi", "amazonpay", "aubank",
+    "goaxb", "jio", "mahb", "myicici", "niyoicici", "omni", "rapl", "sliceaxis",
+    "superyes", "yesg", "zoicici", "fam", "fkaxis", "seyes", "trans"
+  ],
+  "payment_apps": {
+    "$comment": "App names that co-occur with VPAs; also in intent.json payment_offplatform.",
+    "terms": ["gpay", "google pay", "phonepe", "paytm", "bhim", "amazon pay", "cred", "mobikwik", "freecharge", "slice", "jupiter"]
+  }
+}

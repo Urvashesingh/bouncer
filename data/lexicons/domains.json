@@ -1,0 +1,65 @@
+{
+  "$comment": "Domain/TLD lexicons for SPEC §4 `url` and `safety.scamlink` detectors.",
+  "messenger_domains": {
+    "$comment": "Direct off-platform contact links. Highest confidence URL signal.",
+    "terms": [
+      "wa.me", "api.whatsapp.com", "chat.whatsapp.com", "web.whatsapp.com", "whatsapp.com",
+      "t.me", "telegram.me", "telegram.org", "telegram.dog",
+      "ig.me", "instagram.com", "instagr.am",
+      "m.me", "messenger.com", "facebook.com", "fb.com", "fb.me",
+      "signal.me", "snapchat.com", "discord.gg", "discord.com",
+      "join.skype.com", "skype.com", "hangouts.google.com", "meet.google.com",
+      "zoom.us", "linkedin.com", "x.com", "twitter.com"
+    ]
+  },
+  "shorteners": {
+    "$comment": "SPEC §4: flag, never fetch in core (core has zero network I/O).",
+    "terms": [
+      "bit.ly", "bitly.com", "tinyurl.com", "goo.gl", "t.co", "ow.ly", "buff.ly",
+      "is.gd", "cutt.ly", "rebrand.ly", "shorturl.at", "rb.gy", "linktr.ee",
+      "s.id", "tiny.cc", "shorte.st", "adf.ly", "bl.ink", "clck.ru", "v.gd",
+      "qr.ae", "u.to", "sh.st", "surl.li", "shrtco.de", "1link.in", "zi.gg"
+    ]
+  },
+  "payment_domains": {
+    "$comment": "Off-platform payment destinations; feeds scamlink when paired with urgency.",
+    "terms": [
+      "paypal.me", "razorpay.com", "rzp.io", "pages.razorpay.com",
+      "paytm.me", "phonepe.com", "gpay.app.goo.gl", "cash.app",
+      "venmo.com", "wise.com", "revolut.me", "buymeacoffee.com", "stripe.com"
+    ]
+  },
+  "risky_tlds": {
+    "$comment": "Disproportionately abused TLDs. Signal, not a verdict on its own.",
+    "terms": [
+      "tk", "ml", "ga", "cf", "gq", "top", "xyz", "buzz", "click", "link",
+      "work", "loan", "download", "review", "country", "stream", "gdn",
+      "mom", "party", "science", "date", "faith", "racing", "win", "bid",
+      "trade", "webcam", "cricket", "accountant", "zip", "mov", "rest"
+    ]
+  },
+  "allowlist": {
+    "$comment": "First-party domains. Never flagged (SPEC §4).",
+    "terms": [
+      "bouncer.com", "www.bouncer.com", "app.bouncer.com", "help.bouncer.com",
+      "support.bouncer.com", "blog.bouncer.com", "bouncer.in"
+    ]
+  },
+  "common_tlds": {
+    "$comment": "Used to decide whether a bare 'foo.bar' token is plausibly a hostname.",
+    "terms": [
+      "com", "net", "org", "in", "co", "io", "me", "app", "dev", "info", "biz",
+      "us", "uk", "ca", "au", "de", "fr", "it", "es", "nl", "ru", "cn", "jp",
+      "br", "mx", "ae", "sg", "ch", "se", "no", "dk", "fi", "pl", "gov", "edu",
+      "ac", "tv", "cc", "ly", "gg", "to", "sh", "st", "am", "fm", "pe", "ai"
+    ]
+  },
+  "email_domains": {
+    "$comment": "Used to recognise obfuscated 'gmail dot com' style spellings.",
+    "terms": [
+      "gmail", "googlemail", "yahoo", "ymail", "rediffmail", "rediff",
+      "hotmail", "outlook", "live", "msn", "icloud", "me", "aol",
+      "protonmail", "proton", "zoho", "gmx", "mail", "yandex", "inbox"
+    ]
+  }
+}

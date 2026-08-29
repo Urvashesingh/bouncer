@@ -1,0 +1,81 @@
+{
+  "$comment": "Number-word lexicon for SPEC §3.5. Source of truth; mirrored into core as a TS module (core has zero fs deps).",
+  "digits": {
+    "en": {
+      "zero": "0",
+      "oh": "0",
+      "o": "0",
+      "nought": "0",
+      "naught": "0",
+      "nil": "0",
+      "one": "1",
+      "two": "2",
+      "to": "2",
+      "too": "2",
+      "three": "3",
+      "four": "4",
+      "for": "4",
+      "five": "5",
+      "six": "6",
+      "seven": "7",
+      "eight": "8",
+      "ate": "8",
+      "nine": "9"
+    },
+    "hi-latin": {
+      "shunya": "0",
+      "sunya": "0",
+      "shoonya": "0",
+      "ek": "1",
+      "aik": "1",
+      "do": "2",
+      "teen": "3",
+      "tin": "3",
+      "char": "4",
+      "chaar": "4",
+      "paanch": "5",
+      "panch": "5",
+      "paach": "5",
+      "che": "6",
+      "chhe": "6",
+      "chah": "6",
+      "chhah": "6",
+      "saat": "7",
+      "sat": "7",
+      "aath": "8",
+      "ath": "8",
+      "nau": "9",
+      "no": "9"
+    },
+    "hi-deva": {
+      "शून्य": "0",
+      "एक": "1",
+      "दो": "2",
+      "तीन": "3",
+      "चार": "4",
+      "पांच": "5",
+      "पाँच": "5",
+      "छह": "6",
+      "छे": "6",
+      "सात": "7",
+      "आठ": "8",
+      "नौ": "9"
+    }
+  },
+  "multipliers": {
+    "$comment": "SPEC §3.5: 'double five' → 55, 'triple 9' → 999.",
+    "double": 2,
+    "dubble": 2,
+    "twice": 2,
+    "triple": 3,
+    "treble": 3,
+    "thrice": 3,
+    "quadruple": 4,
+    "do-baar": 2,
+    "teen-baar": 3
+  },
+  "ambiguous": {
+    "$comment": "Words that are digits ONLY in a numeric run context. Standalone they are ordinary English/Hinglish and must not be expanded, or 'call it a day' style false positives appear. Enforced by requiring an adjacent digit chunk.",
+    "words": ["o", "oh", "to", "too", "for", "ate", "no", "do", "che", "one", "nil"]
+  }
+}

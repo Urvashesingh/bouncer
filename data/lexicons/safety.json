@@ -1,0 +1,83 @@
+{
+  "$comment": "Safety lexicons for SPEC §4 safety.* detectors. Severity 1-3 per SPEC §4 hostility row.",
+  "hostility": {
+    "sev1": {
+      "$comment": "Rude / heated but not abusive. Warn-level at most.",
+      "terms": [
+        "shut up", "shutup", "stupid", "idiot", "nonsense", "rubbish", "pathetic",
+        "worst", "useless", "trash", "garbage", "clown", "joker", "fool",
+        "bakwas", "bakwaas", "faltu", "ghatiya", "bewakoof", "bewakoof",
+        "pagal", "paagal", "nalayak", "chup kar", "chup ho ja"
+      ],
+      "severity": 1
+    },
+    "sev2": {
+      "$comment": "Direct abuse / slurs aimed at a person.",
+      "terms": [
+        "bastard", "asshole", "arsehole", "dickhead", "scumbag", "moron",
+        "retard", "shithead", "prick", "wanker", "cunt", "bitch", "whore",
+        "kutta", "kutte", "kamina", "kamine", "harami", "haramkhor",
+        "gandu", "chutiya", "chutiye", "bhosdi", "bhosdike", "madarchod",
+        "behenchod", "bhenchod", "bkl", "mc", "bc", "saala", "saale", "randi"
+      ],
+      "severity": 2
+    },
+    "sev3": {
+      "$comment": "Threats of violence. Always actioned regardless of booking stage.",
+      "terms": [
+        "kill you", "kill u", "murder you", "stab you", "shoot you",
+        "beat you up", "beat the shit", "break your legs", "break your face",
+        "smash your face", "burn your house", "come to your house",
+        "find you and", "you are dead", "ur dead", "watch your back",
+        "jaan se maar", "maar dunga", "maar dungi", "dekh lunga", "dekh lenge",
+        "zinda nahi", "tujhe chhodunga nahi", "ghar aake", "haath pair tod"
+      ],
+      "severity": 3
+    }
+  },
+  "extortion": {
+    "$comment": "SPEC §4: (refund|discount|money) ... (or|warna|nahi to) ... (review|rating|1 star|complaint). Built as three slot families combined by the detector.",
+    "demand": [
+      "refund", "full refund", "money back", "paisa wapas", "paise wapas",
+      "discount", "free stay", "free night", "compensation", "waive",
+      "cancel my booking", "cancel the charge", "chargeback",
+      "extra night", "upgrade", "cashback", "adjust the amount",
+      "paisa", "paise", "money", "pay me", "de do", "wapas karo"
+    ],
+    "conditional": [
+      "or i will", "or i'll", "or ill", "or else", "otherwise", "or we will",
+      "if not", "if you don't", "if you dont", "unless you",
+      "warna", "nahi to", "nahin to", "varna", "nahito", "vrna",
+      "ya phir", "or main", "or mai"
+    ],
+    "leverage": [
+      "review", "reviews", "bad review", "negative review", "worst review",
+      "rating", "bad rating", "low rating", "1 star", "one star", "1-star",
+      "2 star", "two star", "zero star", "0 star",
+      "complaint", "complain", "report you", "report this",
+      "social media", "twitter", "instagram post", "viral", "expose you",
+      "consumer court", "legal action", "police complaint", "fir",
+      "review kar dunga", "review likh dunga", "rating gira dunga",
+      "bura review", "galat review"
+    ]
+  },
+  "scam": {
+    "$comment": "SPEC §4 safety.scamlink: url × (payment | urgency | too-good).",
+    "urgency": [
+      "right now", "immediately", "urgent", "urgently", "hurry", "quick",
+      "last chance", "expires", "expiring", "only today", "today only",
+      "limited time", "act fast", "within 10 minutes", "within 5 minutes",
+      "before it's gone", "jaldi", "abhi", "turant", "aaj hi", "jald se jald"
+    ],
+    "payment": [
+      "pay", "payment", "deposit", "advance", "booking amount", "token amount",
+      "transfer", "send money", "upi", "gpay", "phonepe", "paytm", "bank details",
+      "card details", "cvv", "otp", "pin", "netbanking", "wallet"
+    ],
+    "too_good": [
+      "50% off", "60% off", "70% off", "80% off", "90% off", "half price",
+      "free upgrade", "guaranteed", "no questions asked", "special price for you",
+      "only for you", "secret deal", "insider rate", "below market"
+    ]
+  }
+}

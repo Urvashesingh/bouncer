@@ -1,0 +1,24 @@
+{
+  "name": "@bouncer/server",
+  "version": "0.1.0",
+  "description": "Fastify microservice wrapping the Bouncer engine",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@bouncer/core": "workspace:*",
+    "fastify": "^5.2.0",
+    "@fastify/cors": "^10.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

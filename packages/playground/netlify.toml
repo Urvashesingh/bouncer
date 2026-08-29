@@ -1,0 +1,11 @@
+# Static deploy: core has zero I/O deps, so the whole engine ships in the bundle
+# and Tiers 1-4 run client-side with no backend (SPEC §11).
+[build]
+  base = "../.."
+  command = "pnpm install --frozen-lockfile && pnpm --filter @bouncer/playground build"
+  publish = "packages/playground/dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,0 +1,65 @@
+{
+  "$comment": "Tier 3 weights, bands and policy knobs (SPEC §6, §13). Hot-tunable: THRESHOLDS_PATH points here. Hand-tuned now; train-classifier.ts refines at build step 7.",
+  "weights": {
+    "$comment": "The w1..w11 of the SPEC §6 scoring equation.",
+    "validPhone": 9.0,
+    "partialPhone": 2.5,
+    "mixedForm": 3.0,
+    "noiseDigitsRemoved": 0.45,
+    "weirdnessFlags": 0.9,
+    "intentHits": 1.1,
+    "handle": 2.6,
+    "upi": 8.5,
+    "riskyUrl": 3.2,
+    "digitPressure": 0.35,
+    "zeroWidthCount": 0.8,
+    "offPlatformFloor": 3.6,
+    "address": 4.2,
+    "email": 8.5,
+    "confusablesFolded": 0.4
+  },
+  "safetyWeights": {
+    "$comment": "Safety is scored separately from contact: it must not be relaxed post-booking.",
+    "hostilitySev0": 0.6,
+    "hostilitySev1": 3.5,
+    "hostilitySev2": 4.0,
+    "hostilitySev3": 9.0,
+    "extortion": 8.0,
+    "extortionImplied": 4.5,
+    "scamlink": 7.0
+  },
+  "modifiers": {
+    "$comment": "stageModifier: post_booking massively relaxes CONTACT rules only (host must share address/gate code). roleModifier: a host pushing off-platform is worse than a guest (fraud asymmetry).",
+    "stage": {
+      "pre_booking": 1.0,
+      "post_booking": 0.35
+    },
+    "role": {
+      "guest": 1.0,
+      "host": 1.25
+    }
+  },
+  "bands": {
+    "$comment": "score < low -> allow | > high -> block | between -> Tier 4. Target: >=92% of traffic decided at or before Tier 3 (SPEC §6).",
+    "low": 3.0,
+    "high": 8.0
+  },
+  "session": {
+    "$comment": "Relationship-level accumulation (SPEC §6).",
+    "fragmentBufferSize": 10,
+    "lastMessagesSize": 5,
+    "fragmentWindowMs": 1800000,
+    "digitPressureHalfLifeMs": 3600000,
+    "windowedRescanMessages": 3
+  },
+  "policy": {
+    "$comment": "SPEC §9 rate limiting; wired fully at build step 9.",
+    "blockCooldownThreshold": 3,
+    "blockCooldownWindowMs": 600000
+  },
+  "failMode": {
+    "$comment": "SPEC §2: pre_booking fails CLOSED, post_booking fails OPEN.",
+    "pre_booking": "closed",
+    "post_booking": "open"
+  }
+}
